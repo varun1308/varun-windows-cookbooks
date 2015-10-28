@@ -1,0 +1,7 @@
+name 'win_apps'
+maintainer 'The Authors'
+maintainer_email 'you@example.com'
+license 'all_rights'
+description 'Installs/Configures win_apps'
+long_description 'Installs/Configures win_apps'
+version '0.1.0'
