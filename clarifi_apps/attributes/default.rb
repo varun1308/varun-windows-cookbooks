@@ -43,3 +43,21 @@ default['content_tasks']['new_app_config'] = nil
 default['content_tasks']['should_replace_app_config'] = false
 default['content_tasks']['app_erb_config'] = nil
 default['content_tasks']['app_config_params'] = Hash.new
+
+#geocoder task attributes
+default['geocoder_task']['task_name'] = 'ContentManagementService'
+default['geocoder_task']['task_executable_with_args'] = 'Clarifi.ContentManagement.WinService.exe ,1,2,3,4,5,6,7,8,9,D,E,F,G,H,I,J,K,L,M'
+default['geocoder_task']['task_start'] = :manual
+default['geocoder_task']['task_install_base_path'] = "#{ENV['SYSTEMDRIVE']}\\winservices"
+default['geocoder_task']['new_app_config'] = nil
+default['geocoder_task']['should_replace_app_config'] = false
+default['geocoder_task']['app_erb_config'] = nil
+default['geocoder_task']['app_config_params'] = Hash.new
+default['geocoder_task']['run_level'] = :limited
+default['geocoder_task']['force'] = true
+default['geocoder_task']['interactive_enabled'] = false
+default['geocoder_task']['frequency_modifier'] = 1
+default['geocoder_task']['frequency'] = :once
+default['geocoder_task']['start_day'] = nil
+default['geocoder_task']['start_time'] = nil
+default['geocoder_task']['day'] = nil
