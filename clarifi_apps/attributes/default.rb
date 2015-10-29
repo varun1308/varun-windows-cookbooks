@@ -1,6 +1,10 @@
 default['tmc_website']['site_name'] = 'tmc_website'
-default['tmc_website']['host_header'] = 'tmc.clarifi.io'
+default['tmc_website']['host_header'] = ''
 default['tmc_website']['port'] = 80
 default['tmc_website']['protocol'] = :http
 default['tmc_website']['runtime_version'] = '4.0'
 default['tmc_website']['site_base_directory'] = "#{ENV['SYSTEMDRIVE']}\\inetpub\\wwwroot"
+default['tmc_website']["should_replace_web_config"] = false
+default['tmc_website']["new_web_config"] = nil
+default['tmc_website']["web_config_erb"] = nil
+default['tmc_website']["web_config_params"] = Hash.new

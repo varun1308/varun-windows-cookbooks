@@ -6,6 +6,7 @@
 
 Chef::Log.level = :debug
 
+
 apps = search(:aws_opsworks_app, "deploy:true") rescue []
 app = apps.find {|x| x[:shortname] == "tmc_website"}
 if app
@@ -18,9 +19,10 @@ if app
 	  website_base_directory node['tmc_website']['site_base_directory']
 	  runtime_version node['tmc_website']['runtime_version']
 	  scm app["app_source"]
-	  should_replace_web_config false
-	  #web_erb_config 'Web.config.erb'
-	  #web_config_params node['tmc_website']["web_config_params"]
+	  should_replace_web_config node['tmc_website']["should_replace_web_config"]
+	  new_web_config node['tmc_website']["new_web_config"]
+	  web_erb_config node['tmc_website']["web_config_erb"]
+	  web_config_params node['tmc_website']["web_config_params"]
 	  action :add
 	end
 else
