@@ -50,7 +50,7 @@ action :install do
 			  EOH
 			end
 		else
-			unless new_resource.app_erb_config.empty? 
+			unless new_resource.app_erb_config.nil? || new_resource.app_erb_config.empty? 
 				Chef::Log.debug "app.config params #{new_resource.app_config_params}."
 
 			 	template "#{app_checkout}\\app.config" do
@@ -67,7 +67,7 @@ action :install do
 		end
 
 		#move directory to destination
-		if Dir.exist?(service_directory)
+		if ::Dir.exist?(service_directory)
 			#delete existing directory
 			directory service_directory do
 				action :delete

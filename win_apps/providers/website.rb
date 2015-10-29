@@ -47,7 +47,7 @@ action :add do
 			  EOH
 			end
 		else
-			unless new_resource.web_erb_config.empty? 
+			unless new_resource.web_erb_config.nil? || new_resource.web_erb_config.empty? 
 				Chef::Log.debug "web.config params #{new_resource.web_config_params}."
 
 			 	template "#{app_checkout}\\web.config" do
@@ -64,7 +64,7 @@ action :add do
 		end
 
 		#move directory to destination
-		if Dir.exist?(website_directory)
+		if ::Dir.exist?(website_directory)
 			#delete existing directory
 			directory website_directory do
 				action :delete
