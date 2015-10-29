@@ -4,9 +4,9 @@ end
 
 use_inline_resources
 
-include_recipe 'aws'
-
 action :add do
+
+	run_context.include_recipe 'aws'
 	
 	website_directory = "#{new_resource.website_base_directory}\\#{new_resource.website_name}"
 	
