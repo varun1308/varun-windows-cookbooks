@@ -22,3 +22,15 @@ default['teaser_website']["new_web_config"] = nil
 default['teaser_website']["web_config_erb"] = nil
 default['teaser_website']["web_config_params"] = Hash.new
 
+#roomstd website attributes
+default['roomstd_website']['site_name'] = 'roomstd_website'
+default['roomstd_website']['host_header'] = 'roomstd.clarifi.io'
+default['roomstd_website']['port'] = 80
+default['roomstd_website']['protocol'] = :http
+default['roomstd_website']['runtime_version'] = '4.0'
+default['roomstd_website']['site_base_directory'] = "#{ENV['SYSTEMDRIVE']}\\inetpub\\wwwroot"
+default['roomstd_website']["should_replace_web_config"] = false
+default['roomstd_website']["new_web_config"] = nil
+default['roomstd_website']["web_config_erb"] = nil
+default['roomstd_website']["web_config_params"] = Hash.new
+
