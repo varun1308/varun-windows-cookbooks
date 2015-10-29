@@ -36,7 +36,6 @@ default['roomstd_website']["web_config_params"] = Hash.new
 
 #content_tasks windows service attributes
 default['content_tasks']['service_name'] = 'ContentManagementService'
-default['content_tasks']['service_source'] = nil
 default['content_tasks']['service_executable_with_args'] = 'Clarifi.ContentManagement.WinService.exe ,1,2,3,4,5,6,7,8,9,D,E,F,G,H,I,J,K,L,M'
 default['content_tasks']['service_start'] = :manual
 default['content_tasks']['service_install_base_path'] = "#{ENV['SYSTEMDRIVE']}\\winservices"
