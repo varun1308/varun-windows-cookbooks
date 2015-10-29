@@ -24,7 +24,7 @@ action :add do
 		file_name, bucket, remote_path, url = Tavisca::WinApps::Helper.parse_uri(new_resource.scm[:url])
 
 		#download file from s3
-		aws_s3_file File.join(Chef::Config["file_cache_path"],file_name) do
+		aws_s3_file ::File.join(Chef::Config["file_cache_path"],file_name) do
 		  bucket bucket
 		  remote_path remote_path
 		  aws_access_key_id new_resource.scm[:user]
@@ -34,7 +34,7 @@ action :add do
 
 		#unzip file to destination
 		windows_zipfile app_checkout do
-		  source File.join(Chef::Config["file_cache_path"],file_name)
+		  source ::File.join(Chef::Config["file_cache_path"],file_name)
 		  action :unzip
 		end
 
