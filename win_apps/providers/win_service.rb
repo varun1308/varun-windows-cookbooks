@@ -3,6 +3,7 @@ def whyrun_supported?
 end
 
 use_inline_resources
+include_recipe 'aws'
 
 action :install do
 
