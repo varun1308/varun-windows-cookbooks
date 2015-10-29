@@ -11,7 +11,7 @@ app = apps.find {|x| x[:shortname] == "tmc_website"}
 if app
 	Chef::Log.debug "Found #{app[:shortname]} to deploy on the stack. Assuming tmc_website app is same."
 
-	tavisca_apps_website node['tmc_website']['site_name'] do
+	win_apps_website node['tmc_website']['site_name'] do
 	  host_header node['tmc_website']['host_header']
 	  port node['tmc_website']['port']
 	  protocol node['tmc_website']['protocol']
