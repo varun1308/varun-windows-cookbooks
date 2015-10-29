@@ -13,7 +13,7 @@ app = apps.find {|x| x[:shortname] == "content_tasks"}
 if app
 	Chef::Log.debug "Found #{app[:shortname]} to deploy on the stack. Assuming content_tasks app is same."
 
-	tavisca_apps_winservice node['content_tasks']['service_name'] do
+	win_apps_win_service node['content_tasks']['service_name'] do
 		service_source node['content_tasks']['service_source']
 		service_executable_with_args node['content_tasks']['service_executable_with_args']
 		service_start node['content_tasks']['service_start']
