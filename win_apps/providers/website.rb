@@ -69,6 +69,7 @@ action :add do
 		if ::Dir.exist?(website_directory)
 			#delete existing directory
 			directory website_directory do
+				recursive true
 				action :delete
 			end
 		end

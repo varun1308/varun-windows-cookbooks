@@ -72,6 +72,7 @@ action :install do
 		if ::Dir.exist?(service_directory)
 			#delete existing directory
 			directory service_directory do
+				recursive true
 				action :delete
 			end
 		end
