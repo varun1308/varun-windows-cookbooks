@@ -6,5 +6,5 @@ description 'Installs/Configures win_apps'
 long_description 'Installs/Configures win_apps'
 version '0.1.0'
 
-depends => 'iis'
-depends => 'windows'
+depends 'iis'
+depends 'windows'
