@@ -15,7 +15,7 @@ action :add do
 
 	Chef::Log.debug "Downloading app source file using info #{new_resource.scm}."
 
-	#parse scm info
+	#parse scm info	
 	if !new_resource.scm[:type].exist? || new_resource.scm[:type] != 's3'
 		Chef::Log.error "Error: No s3 configuration found in scm parameter."
         raise Chef::Exceptions::UnsupportedAction "#{self.to_s} does not support repository types other than s3"
